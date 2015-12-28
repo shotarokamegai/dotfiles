@@ -1,4 +1,4 @@
-# export PATH=/usr/local/bin/vim
+# EXPORT path=/USR/LOCAL/bin/vim
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 autoload colors
@@ -16,7 +16,11 @@ RPROMPT='[%F{green}%d%f]'
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="agnoster"
+# ZSH_THEME="agnoster"
+# ZSH_THEME="jbergantine"
+# ZSH_THEME="clean"
+ZSH_THEME="gallifrey"
+
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -56,12 +60,12 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git npm pip emoji-clock)
 plugins=(osx brew git laravel)ns=(osx brew git laravel)
+plugins=(git heroku)
 
 # User configuration
-
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/local/go/bin:/usr/local/bin/vim"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/local/go/bin:$HOME/.composer/vendor/bin:/Library/Nessus/run/sbin:/usr/local/bin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -91,12 +95,25 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias vi='vim'
 alias cdb='cd-bookmark'
 alias history='history -E'
 alias psy='./psysh'
 alias vimrc="vi ~/dotfiles/.vimrc"
 alias zshrc="vi ~/.zshrc"
 alias diesel="cd /Users/shotarokamegai/documents/site/diesel"
+alias d="cd /Users/shotarokamegai/documents"
+alias php.ini="vi /usr/local/etc/php/5.6/php.ini"
+alias vhost="sudo vi /private/etc/apache2/extra/httpd-vhosts.conf"
+alias hosts="vim /private/etc/hosts"
+alias sconfig="vi ~/.ssh/config"
+alias nconfig="vi /usr/local/etc/nginx/nginx.conf"
+alias apache="vi /etc/apache2/httpd.conf"
+# Load xdebug Zend extension with php command
+alias php='php -dzend_extension=xdebug.so'
+# PHPUnit needs xdebug for coverage. In this case, just make an alias with php command prefix.
+alias phpunit='php $(which phpunit)'
+
 case "${TERM}" in
 kterm*|xterm)
   precmd() {
@@ -107,34 +124,20 @@ esac
 setopt auto_cd
 cdpath=(.. ~ ~/src)
 
-# source /path-to-antigen-clone/antigen.zsh
-# source "$HOME/antigen/antigen.zsh"
+alias tmux='tmux -2'
+alias tm='tmux -2'
 
-# antigen bundle git
-# antigen bundle pip
-# antigen bundle rsync
-# antigen bundle python
-# antigen bundle virtualenvwrapper
-# antigen bundle node
-# antigen bundle npm
-# antigen bundle rake
-# antigen bundle rvm
-# antigen bundle bundler
-# antigen bundle zsh-users/zsh-completions src
-# antigen bundle zsh-users/zsh-syntax-highlighting
-# antigen bundle kennethreitz/autoenv
-# antigen bundle command-not-found
-# antigen bundle history
-# antigen bundle tmux
-# antigen bundle vundle
-# antigen bundle sprunge
-# antigen bundle fabric
-# antigen bundle mollifier/cd-bookmark
-#
-# antigen-theme jreese
-# antigen-apply
+# use vim key bind
+bindkey -v
+PATH="/usr/local/heroku/bin:$PATH"
 
-# Get zsh run faster
-# if (which zprof > /dev/null) ;then
-#     zprof | less
-# fi
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+export GOPATH=$HOME/.go
+export GOBIN=$GOPATH/bin
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH="/usr/local/sbin:$PATH"
