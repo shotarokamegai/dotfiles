@@ -99,20 +99,20 @@ alias vi='vim'
 alias cdb='cd-bookmark'
 alias history='history -E'
 alias psy='./psysh'
-alias vimrc="vi ~/dotfiles/.vimrc"
+alias vimrc="vi ~/.vimrc"
 alias zshrc="vi ~/.zshrc"
-alias diesel="cd /Users/shotarokamegai/documents/site/diesel"
-alias d="cd /Users/shotarokamegai/documents"
-alias php.ini="vi /usr/local/etc/php/5.6/php.ini"
+alias d="cd /Users/shotaro/documents"
+alias php.ini="vi /usr/local/etc/php/5.5/php.ini"
+# alias php.ini="vi /etc/php.ini"
 alias vhost="sudo vi /private/etc/apache2/extra/httpd-vhosts.conf"
 alias hosts="vim /private/etc/hosts"
-alias sconfig="vi ~/.ssh/config"
+alias sconfig="sudo vi ~/.ssh/config"
 alias nconfig="vi /usr/local/etc/nginx/nginx.conf"
 alias apache="vi /etc/apache2/httpd.conf"
 # Load xdebug Zend extension with php command
-alias php='php -dzend_extension=xdebug.so'
+# alias php='php -dzend_extension=xdebug.so'
 # PHPUnit needs xdebug for coverage. In this case, just make an alias with php command prefix.
-alias phpunit='php $(which phpunit)'
+# alias phpunit='php $(which phpunit)'
 
 case "${TERM}" in
 kterm*|xterm)
